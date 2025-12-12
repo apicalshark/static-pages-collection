@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題回報 - 宿舍洗衣預約系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-soap text-teal-600 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl text-gray-800">宿舍洗衣系統</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-teal-600 transition">狀態總覽</a>
+                    <a href="reserve.html" class="text-gray-500 hover:text-teal-600 transition">預約洗衣</a>
+                    <a href="my-bookings.html" class="text-gray-500 hover:text-teal-600 transition">我的預約</a>
+                    <a href="report.html" class="text-teal-600 font-medium border-b-2 border-teal-600 pb-1">問題回報</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-600 mr-4">Hi, 吳同學</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        
+        <!-- 回報表單 -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                <i class="fa-solid fa-triangle-exclamation text-yellow-500 mr-2"></i>
+                提交新問題
+            </h2>
+            <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">主旨</label>
+                        <input type="text" class="w-full p-2 bg-gray-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="例如：無法啟動、吃錢...">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 text-sm font-bold mb-2">相關設備</label>
+                        <select class="w-full p-2 bg-gray-50 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            <option>選擇發生問題的洗衣機...</option>
+                            <option>A棟 - 01號機</option>
+                            <option>A棟 - 02號機</option>
+                            <option>B棟 - 01號機</option>
+                            <option>B棟 - 02號機</option>
+                            <option>系統/帳號問題</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">詳細描述</label>
+                    <textarea class="w-full p-3 bg-gray-50 border rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="請詳細描述遇到的狀況..."></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" onclick="alert('回報已提交，管理員將盡快處理！')" class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-black transition">
+                        送出回報
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- 歷史回報清單 -->
+        <h3 class="text-lg font-bold text-gray-800 mb-4">歷史回報紀錄</h3>
+        <div class="space-y-4">
+            
+            <!-- 案例 1：處理中 -->
+            <div class="bg-white rounded-xl shadow-sm p-5 border-l-4 border-yellow-400">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-bold text-gray-800">B棟-01號機 脫水時有怪聲</h4>
+                    <span class="text-xs font-bold px-2 py-1 bg-yellow-100 text-yellow-700 rounded-full">處理中</span>
+                </div>
+                <p class="text-sm text-gray-600 mb-3">使用時發出巨大的撞擊聲響，擔心機器受損。</p>
+                <div class="text-xs text-gray-400 flex justify-between">
+                    <span>回報日期：2025/12/11</span>
+                    <span>單號：#RP2025121101</span>
+                </div>
+                <!-- 管理員回覆區 -->
+                <div class="mt-3 pt-3 border-t border-dashed border-gray-200 bg-gray-50 -mx-5 -mb-5 p-4 rounded-b-xl">
+                    <p class="text-sm text-gray-700"><span class="font-bold text-teal-600">管理員回覆：</span> 已收到通知，技師預計明日前往檢查，感謝回報。</p>
+                </div>
+            </div>
+
+            <!-- 案例 2：已結案 -->
+            <div class="bg-white rounded-xl shadow-sm p-5 border-l-4 border-green-500 opacity-75">
+                <div class="flex justify-between items-start mb-2">
+                    <h4 class="font-bold text-gray-800">A棟-02號機 投幣孔卡住</h4>
+                    <span class="text-xs font-bold px-2 py-1 bg-green-100 text-green-700 rounded-full">已解決</span>
+                </div>
+                <div class="text-xs text-gray-400 flex justify-between">
+                    <span>回報日期：2025/11/20</span>
+                    <span>單號：#RP2025112005</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

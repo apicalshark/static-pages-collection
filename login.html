@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入 - 宿舍洗衣預約系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 h-screen flex items-center justify-center">
+
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden flex w-full max-w-4xl h-[600px]">
+        <!-- 左側圖片區 -->
+        <div class="hidden md:flex w-1/2 bg-teal-600 items-center justify-center relative">
+            <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb8f?q=80&w=2071&auto=format&fit=crop" alt="Laundry" class="absolute inset-0 w-full h-full object-cover opacity-50">
+            <div class="relative z-10 text-white text-center p-8">
+                <h1 class="text-4xl font-bold mb-4">宿舍洗衣預約系統</h1>
+                <p class="text-lg opacity-90">輕鬆預約，智慧生活</p>
+                <p class="mt-2 text-sm opacity-75">Group 3 期末專案展示</p>
+            </div>
+        </div>
+
+        <!-- 右側表單區 -->
+        <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+            <div class="text-center mb-8">
+                <div class="inline-block p-3 rounded-full bg-teal-100 text-teal-600 mb-4">
+                    <i class="fa-solid fa-soap text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800">歡迎回來</h2>
+                <p class="text-gray-500 text-sm mt-1">請輸入您的學號登入系統</p>
+            </div>
+
+            <form action="index.html">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="student-id">學號 / 帳號</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <input class="w-full py-3 pl-10 pr-3 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition" id="student-id" type="text" placeholder="例如：110123456" required>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="password">密碼</label>
+                    <div class="relative">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+                        <input class="w-full py-3 pl-10 pr-3 text-gray-700 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:border-teal-500 focus:ring-2 focus:ring-teal-200 transition" id="password" type="password" placeholder="••••••••" required>
+                    </div>
+                    <div class="flex justify-between mt-2 text-xs">
+                        <a href="#" class="text-gray-500 hover:text-teal-600">忘記密碼？</a>
+                    </div>
+                </div>
+
+                <button type="button" onclick="window.location.href='index.html'" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 transform hover:-translate-y-1">
+                    登入系統
+                </button>
+            </form>
+
+            <div class="mt-8 text-center text-sm text-gray-500">
+                還沒有帳號？ <a href="#" class="text-teal-600 font-bold hover:underline">立即註冊</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的預約 - 宿舍洗衣預約系統</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap');
+        body { font-family: 'Noto Sans TC', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-soap text-teal-600 text-2xl mr-2"></i>
+                    <span class="font-bold text-xl text-gray-800">宿舍洗衣系統</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-500 hover:text-teal-600 transition">狀態總覽</a>
+                    <a href="reserve.html" class="text-gray-500 hover:text-teal-600 transition">預約洗衣</a>
+                    <a href="my-bookings.html" class="text-teal-600 font-medium border-b-2 border-teal-600 pb-1">我的預約</a>
+                    <a href="report.html" class="text-gray-500 hover:text-teal-600 transition">問題回報</a>
+                </div>
+                <div class="flex items-center">
+                    <span class="text-sm text-gray-600 mr-4">Hi, 吳同學</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">我的預約紀錄</h2>
+
+        <!-- 即將到來的預約 (重點顯示) -->
+        <div class="bg-white rounded-xl shadow-md border-l-4 border-teal-500 p-6 mb-8 flex flex-col md:flex-row justify-between items-center">
+            <div>
+                <span class="inline-block bg-teal-100 text-teal-800 text-xs px-2 py-1 rounded-full font-bold mb-2">即將到來</span>
+                <h3 class="text-xl font-bold text-gray-800">2025/12/12 (今天)</h3>
+                <div class="flex items-center mt-2 text-gray-600">
+                    <i class="fa-regular fa-clock mr-2"></i> 10:00 - 11:00
+                    <span class="mx-3 text-gray-300">|</span>
+                    <i class="fa-solid fa-layer-group mr-2"></i> A棟 - 01號機
+                </div>
+            </div>
+            <div class="mt-4 md:mt-0 flex space-x-3">
+                <button class="px-4 py-2 text-red-500 border border-red-200 hover:bg-red-50 rounded-lg text-sm transition">取消預約</button>
+                <button class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 text-sm shadow-sm transition">查看詳情</button>
+            </div>
+        </div>
+
+        <!-- 歷史紀錄表格 -->
+        <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+            <div class="p-4 border-b bg-gray-50 font-bold text-gray-700">歷史紀錄</div>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="text-sm text-gray-500 border-b">
+                            <th class="p-4 font-medium">日期</th>
+                            <th class="p-4 font-medium">時段</th>
+                            <th class="p-4 font-medium">洗衣機</th>
+                            <th class="p-4 font-medium">狀態</th>
+                            <th class="p-4 font-medium">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-700">
+                        <tr class="border-b hover:bg-gray-50 transition">
+                            <td class="p-4">2025/12/10</td>
+                            <td class="p-4">14:00 - 15:00</td>
+                            <td class="p-4">B棟 - 02號機</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">已完成</span></td>
+                            <td class="p-4 text-gray-400 cursor-not-allowed">無</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50 transition">
+                            <td class="p-4">2025/12/05</td>
+                            <td class="p-4">19:00 - 20:00</td>
+                            <td class="p-4">A棟 - 02號機</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-red-100 text-red-600 rounded text-xs">已取消</span></td>
+                            <td class="p-4 text-gray-400 cursor-not-allowed">無</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition">
+                            <td class="p-4">2025/11/28</td>
+                            <td class="p-4">10:00 - 11:00</td>
+                            <td class="p-4">A棟 - 01號機</td>
+                            <td class="p-4"><span class="px-2 py-1 bg-gray-200 text-gray-600 rounded text-xs">已完成</span></td>
+                            <td class="p-4"><button class="text-teal-600 hover:underline">回報問題</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="p-4 text-center border-t">
+                <button class="text-sm text-gray-500 hover:text-teal-600">載入更多...</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
